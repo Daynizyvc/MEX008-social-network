@@ -123,7 +123,7 @@ figure {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30%;
+    margin-top: 10%;
 }
 
 .info-user input {
@@ -165,4 +165,26 @@ figure {
     transform: scale(1.5);
     font-size: 12px;
     border-radius: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    .register-body,
+    .login-body {
+        max-width: 60%;
+    }
+    .register-title {
+        width: 90%;
+        font-size: x-large;
+    }
+    .info-new-user input {
+        width: 20rem;
+    }
+    .budget-page {
+        width: 70%;
+    }
+    .register-title h1 {
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 35px;
+    }
 }
