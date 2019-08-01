@@ -97,8 +97,8 @@
 
          **Criterios de aceptación**
 
-           - Al iniciar sesión o registrarse en la aplicación se tendrá que visualizar el perfil de la usuaria 
-             y al mismo tiempo su “muro”.
+           - Al iniciar sesión o registrarse en la aplicación se tendrá que visualizar el perfil de la 
+             usuaria y al mismo tiempo su “muro”.
 
            - En el head debe haber un “botón” que lleve al timeline para visualizar las publicaciones de las 
              otras usuarias y también contener la opción de cerrar sesión.
