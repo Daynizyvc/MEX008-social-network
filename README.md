@@ -1,4 +1,4 @@
-(srcr/img/logo_horizontal-01.png)
+(src/img/logo_horizontal-01.png)
 
 
 # SupportMe 
