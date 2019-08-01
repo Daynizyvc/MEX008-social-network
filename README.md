@@ -12,7 +12,7 @@
     actualmente es a través de grupos de Watsapp, pero estos grupos solo se limitan a la Unidad donde viven.
 
     
-    (img/mudanza.jpeg)
+    ![imageOne](src/img/mudanza.jpeg)
 
 
     SupportMe es una red social dirigida a este grupo en particular de mujeres, cuya finalidad es encontrar 
@@ -36,7 +36,7 @@
 
   -  El 70% de ellas utilizan las redes sociales para obtener información.
 
-  ![GráficaTwo](img/grafica1)
+  ![GráficaTwo](src/img/grafica1)
 
   - 
 
@@ -80,15 +80,16 @@
 
           - En la página de bienvenida debe visualizarse un botón de inicio de sesión.
 
-          - Al dar *click* en éste botón la aplicación deberá lanzar un modal en donde se le solicite al usuario su 
-            e-mail y contraseña, además en este modal también debe de haber la opción de incio rápido con correo de 
-            gmail o con la cuenta de Facebook de la usuaria.
+          - Al dar *click* en éste botón la aplicación deberá lanzar un modal en donde se le solicite al
+            usuario su e-mail y contraseña, además en este modal también debe de haber la opción de incio 
+            rápido con correo de gmail o con la cuenta de Facebook de la usuaria.
 
-          - Finalmente en este modal debe de haber un botón de "iniciar" (o cualquier otro nombre) que al dar *click* 
-            verifique si los datos que ingresó la usuaria sean   correctos para darle acceso a ***SupportMe***.
+          - Finalmente en este modal debe de haber un botón de "iniciar" (o cualquier otro nombre) que al dar 
+            *click* verifique si los datos que ingresó la usuaria sean   correctos para darle acceso a 
+            ***SupportMe***.
 
-          - Si los datos no son correctos o la usuaria no se ha registrado aún debe visualizarse un mensaje que informe 
-            lo que está pasando para que la usuaria pueda corregir la información.
+          - Si los datos no son correctos o la usuaria no se ha registrado aún debe visualizarse un mensaje 
+            que informe lo que está pasando para que la usuaria pueda corregir la información.
 
     - **Historia 4**
 
@@ -96,11 +97,11 @@
 
          **Criterios de aceptación**
 
-           - Al iniciar sesión o registrarse en la aplicación se tendrá que visualizar el perfil de la usuaria y al
-             mismo tiempo su “muro”.
+           - Al iniciar sesión o registrarse en la aplicación se tendrá que visualizar el perfil de la usuaria 
+             y al mismo tiempo su “muro”.
 
-           - En el head debe haber un “botón” que lleve al timeline para visualizar las publicaciones de las otras 
-             usuarias y también contener la opción de cerrar sesión.
+           - En el head debe haber un “botón” que lleve al timeline para visualizar las publicaciones de las 
+             otras usuarias y también contener la opción de cerrar sesión.
 
            - La parte del perfil debe contener la siguiente información: Foto, nombre y ubicación actual.
 
