@@ -1,15 +1,15 @@
-(src/img/logo_horizontal-01.png)
+(/src/img/logo_horizontal-01.png)
 
 
 # SupportMe 
 
-    Las mudanzas en las familias de los miembros de las Fuerzas Armadas del país es una constante a lo largo de 
-    su vida, continuamente se estan de cambiando de un lugar a otro perdiendo contacto con los vecinos y 
+    Las mudanzas en las familias de los miembros de las Fuerzas Armadas del país es una constante a lo largo 
+    de su vida, continuamente se estan de cambiando de un lugar a otro perdiendo contacto con los vecinos y 
     amigos. Aunado a esto cuando llegan a una nueva ciudad es dificil para las esposas (que son las que se 
     encargan del matenimiento de su hogar) conseguir referencias de buenas escuelas en el área, saber que 
-    prestadores de servicios como electricistas, plomeros, mecánicos, con más recomendables o conocer dónde estan
-    ubicadas las plazas o tiendas más cercanas a su Unidad Habitacional. La comunicación entre ellas actualmente 
-    es a través de grupos de Watsapp, pero estos grupos solo se limitan a la Unidad donde viven.
+    prestadores de servicios como electricistas, plomeros, mecánicos, con más recomendables o conocer dónde 
+    estan ubicadas las plazas o tiendas más cercanas a su Unidad Habitacional. La comunicación entre ellas 
+    actualmente es a través de grupos de Watsapp, pero estos grupos solo se limitan a la Unidad donde viven.
 
     
     (img/mudanza.jpeg)
