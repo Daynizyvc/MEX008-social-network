@@ -40,9 +40,9 @@
 
 
   ![GráficaTwo](src/img/grafica1.jpg)
-  
 
-  ![GráficaThree](src/img/grafica2.jpg)
+
+  ![GráficaThree](src/img/grafica2.png)
 
 - Historia de usuario
 
@@ -70,11 +70,11 @@
           - En la página de bienvenida debe visualizarse un botón de registro.
 
           - Este botón debe llevarme a otra pantalla en donde se le pidan sus datos de registro. Los datos 
-            serían: Nombre, e-mail, username, contraseña, confirmación de contraseña, estado (select), ciudad
-            (select) y unidad habitacional (select).
+            serían: Nombre, e-mail, username, contraseña, confirmación de contraseña, estado (select), 
+            ciudad (select) y unidad habitacional (select).
 
-          - También esta pantalla debe contener un botón de "REGISTRAR" que al dar *click* en él se almacenará
-            y verificará la información.
+          - También esta pantalla debe contener un botón de "REGISTRAR" que al dar *click* en él se 
+            almacenará y verificará la información.
 
     - **Historia 3**
 
@@ -88,8 +88,8 @@
             usuario su e-mail y contraseña, además en este modal también debe de haber la opción de incio 
             rápido con correo de gmail o con la cuenta de Facebook de la usuaria.
 
-          - Finalmente en este modal debe de haber un botón de "iniciar" (o cualquier otro nombre) que al dar 
-            *click* verifique si los datos que ingresó la usuaria sean   correctos para darle acceso a 
+          - Finalmente en este modal debe de haber un botón de "iniciar" (o cualquier otro nombre) que al 
+            dar *click* verifique si los datos que ingresó la usuaria sean   correctos para darle acceso a 
             ***SupportMe***.
 
           - Si los datos no son correctos o la usuaria no se ha registrado aún debe visualizarse un mensaje 
@@ -104,8 +104,8 @@
            - Al iniciar sesión o registrarse en la aplicación se tendrá que visualizar el perfil de la 
              usuaria y al mismo tiempo su “muro”.
 
-           - En el head debe haber un “botón” que lleve al timeline para visualizar las publicaciones de las 
-             otras usuarias y también contener la opción de cerrar sesión.
+           - En el head debe haber un “botón” que lleve al timeline para visualizar las publicaciones de 
+             las otras usuarias y también contener la opción de cerrar sesión.
 
            - La parte del perfil debe contener la siguiente información: Foto, nombre y ubicación actual.
 
