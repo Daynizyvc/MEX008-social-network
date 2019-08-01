@@ -12,7 +12,7 @@
     actualmente es a través de grupos de Watsapp, pero estos grupos solo se limitan a la Unidad donde viven.
 
     
-    ![imageOne](src/img/mudanza.jpeg)
+  ![image-One](src/img/mudanza.jpeg)
 
 
     SupportMe es una red social dirigida a este grupo en particular de mujeres, cuya finalidad es encontrar 
@@ -36,7 +36,7 @@
 
   -  El 70% de ellas utilizan las redes sociales para obtener información.
 
-  ![GráficaTwo](src/img/grafica1)
+  ![GráficaTwo](src/img/grafica1.jpg)
 
   - 
 
@@ -48,11 +48,11 @@
 
         **Criterios de aceptación**
  
-           - En la página de bienvenida se debe visualizar el logo de la red social para que la usuaria 
-           se vaya familiarizando con la aplicación.
+           - En la página de bienvenida se debe visualizar el logo de la red social para que la 
+             usuaria se vaya familiarizando con la aplicación.
 
-           - También debe visualizarse un texto corto de explicación sobre como ***SupportMe*** me va a 
-           ayudar en mi problemática.
+           - También debe visualizarse un texto corto de explicación sobre como ***SupportMe*** me 
+             va a ayudar en mi problemática.
 
            - En esta página seben estar los dos botones para la opción de iniciar sesión (si ya es 
            usuaria de la red social) y botón de registro (si es una nueva usuaria).
