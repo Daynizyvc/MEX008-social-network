@@ -23,15 +23,16 @@
                     hogar.
                 </p>
             </div>
-            <a class="login-button" href="#login">Iniciar sesión</a>
-            <a class="register-button" href="#register">Registrarse</a>
+            <a id="login-button" class="login-button" href="#login">Iniciar sesión</a>
+            <a id="register-button" class="register-button" href="#register">Registrarse</a>
     </section>
 
 
-    <section class="login" id="login">
+    <section class="login hide" id="login">
         <div class="login-body">
 
             <div class="info-user">
+                <input type="button" name="close" value="X" id="close">
                 <a class="fb-button" href="#">Iniciar sesión con facebook</a>
                 <a class="google-button" href="#">Iniciar sesión con google</a>
                 <div>
@@ -40,16 +41,20 @@
                     <div class="line">&nbsp;</div>
                 </div>
                 <input type="text" name="name" id="name-login" placeholder="Correo">
-
                 <input type="password" name="pass" id="pass-login" placeholder="Contraseña">
                 <a class="enter-button" href="#">Iniciar</a>
-
             </div>
         </div>
     </section>
 
-    <script type="text/javascript" src="main.js"></script>
+
+
+
+
+
     <script type="text/javascript" src="lib/index.js"></script>
+    <!-- <script type="text/javascript" src="main.js"></script> -->
+
 
 </body>
 
