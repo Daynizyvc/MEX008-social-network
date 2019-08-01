@@ -39,9 +39,9 @@
   -  El 70% de ellas utilizan las redes sociales para obtener información.
 
   ![GráficaTwo](src/img/grafica1.jpg)
-  
 
-  ![GráficaThree](src/img/grafica2.jpg)
+  <p aling="center"><img src="src/img/grafica2.png"></p>
+
 
   
 
