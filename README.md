@@ -11,8 +11,10 @@
     estan ubicadas las plazas o tiendas más cercanas a su Unidad Habitacional. La comunicación entre ellas 
     actualmente es a través de grupos de Watsapp, pero estos grupos solo se limitan a la Unidad donde viven.
 
+
     
   ![image-One](src/img/mudanza.jpeg)
+
 
 
     SupportMe es una red social dirigida a este grupo en particular de mujeres, cuya finalidad es encontrar 
@@ -32,13 +34,16 @@
 
   - Todas las entrevistadas usarían la red social.
 
-  ![GraficaOne]()
+  ![GraficaOne](src/img/graficac.jpg)
 
   -  El 70% de ellas utilizan las redes sociales para obtener información.
 
   ![GráficaTwo](src/img/grafica1.jpg)
 
-  - 
+  <p aling="center"><img src="src/img/grafica2.jpg"></p>
+
+
+  
 
 - Historia de usuario
 
