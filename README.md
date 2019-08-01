@@ -1,4 +1,4 @@
-(/src/img/logo_horizontal-01.png)
+![logo-SupportMe](img/logo_horizontal-01.png)
 
 
 # SupportMe 
