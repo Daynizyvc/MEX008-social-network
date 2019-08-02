@@ -17,6 +17,7 @@ const showSection = (id) => {
 
 const goinglogin = () => {
     hideSection('welcomepage');
+    hideSection('section-register');
     showSection('login');
 }
 loginButton.addEventListener("click", goinglogin);

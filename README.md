@@ -42,8 +42,6 @@
   ![GráficaTwo](src/img/grafica1.jpg)
 
 
-  ![GráficaThree](src/img/grafica2.png)
-
 - Historia de usuario
 
     - **Historia 1**
