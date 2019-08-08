@@ -12,26 +12,31 @@
   firebase.initializeApp(firebaseConfig);
 
 //   Registrando un usuario con contraseña
-
   const buttonRegister = document.getElementById("button-register");
 
   const register = () => {
      const eMail = document.getElementById("register-email").value;
      const password = document.getElementById("register-password").value;
+     const confirmPassword = document.getElementById("register-cp").value;
    
-     //Usamos la función de firebase para crear un usuario con contraseña
-     firebase.auth().createUserWithEmailAndPassword(eMail, password)
-     .then(function(){
-       sendEmailVerification();
-     })
+    if(password === confirmPassword){
+       //Usamos la función de firebase para crear un usuario con contraseña
+      firebase.auth().createUserWithEmailAndPassword(eMail, password)
+      .then(function(){
+         sendEmailVerification();
+      })
      .catch(function(error) {
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+       var errorCode = error.code;
+        var errorMessage = error.message;
       // ...
       console.log(error);
       console.log(errorMessage);
     });
+    } else{
+      alert("Vuelve a escribir tu contraseña");
+    }
+  
   }
   
   buttonRegister.addEventListener("click", register);
@@ -157,3 +162,11 @@ const observador = () =>{
      console.log(error);
       });     
   }
+
+  //Iniciar sesión con google
+  
+
+
+  //Base de datos con Firebase
+
+  // let database = firebase.database();
