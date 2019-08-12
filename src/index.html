@@ -1,56 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SupportMe</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"
+    />
+    <link rel="stylesheet" href="style.css" />    
 </head>
 
 <body>
-    <section class="welcome-page" id="welcomepage">
-        <div class="welcome-body">
-            <div class="logo">
-                <figure>
-                    <img src="img/logo-02.png" alt="logo">
-                </figure>
-            </div>
-            <div class="description">
-                <p>SupportMe te ayudará a mantener el contacto con antiguas amigas, vecinas y/o conocidas. Además con esta aplicación te podrás mantener informada acerca del nuevo lugar donde viviras haciendo más fácil el proceso de adaptación a tu nuevo
-                    hogar.
-                </p>
-            </div>
-            <a class="login-button" href="#login">Iniciar sesión</a>
-            <a class="register-button" href="#register">Registrarse</a>
-    </section>
-
-
-    <section class="login" id="login">
-        <div class="login-body">
-
-            <div class="info-user">
-                <a class="fb-button" href="#">Iniciar sesión con facebook</a>
-                <a class="google-button" href="#">Iniciar sesión con google</a>
-                <div>
-                    <div class="line">&nbsp;</div>
-                    <div class="leyend"> O </div>
-                    <div class="line">&nbsp;</div>
-                </div>
-                <input type="text" name="name" id="name-login" placeholder="Correo">
-
-                <input type="password" name="pass" id="pass-login" placeholder="Contraseña">
-                <a class="enter-button" href="#">Iniciar</a>
-
-            </div>
-        </div>
-    </section>
-
-    <script type="text/javascript" src="main.js"></script>
-    <script type="text/javascript" src="lib/index.js"></script>
-
-</body>
-
+    <!-- Se hace un contenerdor para el header -->
+    <header id="header-container"></header>
+    <!-- Se hace un contenedor para el main -->
+    <main id="page-container" class="container pageEntry"></main>
+    <!-- Se hace un contenedor para el footer -->
+    <footer id="footer-container"></footer>     
+    
+    <script type="module" src="./app.js "></script>   
+    
+    <!-- Probando Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <!-- Archivo para la autenticación en firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+   
+    <!-- Archivo .js del firebase -->
+    <script type="text/javascript" src="firebase.js"></script>
+  </body>
 </html>
