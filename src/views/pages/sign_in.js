@@ -6,6 +6,7 @@ let Signin = {
         <form id="form-sign">
             <h1>Registro</h1>
             <input type="text" name="name" placeholder="Nombre" id="register-name" class="register-name">
+            <input type="text" name="lastName" placeholder="Apellido" id="register-lastname" class="lastname">
             <input type="email" name="email" placeholder="e-mail" id="register-email" class="register-email">
             <input type="text" name="username" placeholder="Username" id="register-username" class="register-username">
             <input type="password" name="password" placeholder="Contraseña" id="register-password" class="register-password">
@@ -28,6 +29,11 @@ let Signin = {
   },
   after_render: async () => {
       const formOne = document.getElementById("form-sign");
+      const name = formOne.name.value;
+      const lastName = formOne.lastName.value;
+      const email = formOne.email.value;
+      const username = formOne.username.value;
+
       const select = document.getElementById("register-select");
       const statesList = ["Elige un estado", "Aguascalientes", "Baja California", "Baja California Sur","Campeche", "Chihuahua", "Chiapas",
                           "Ciudad de México", "Coahuila", "Colima", "Durango", "Guanajuato", "Guerrero", "Hidalgo", 
@@ -41,7 +47,9 @@ let Signin = {
         select.options[select.options.length]=new Option(statesList[index], index);
       } 
     boton.addEventListener("click", registerUser);
+  
   }
+ 
 }
 
 export default Signin;

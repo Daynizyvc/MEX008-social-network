@@ -6,7 +6,7 @@
 import Home from "./views/pages/home.js";
 import Login from "./views/pages/login.js";
 import Signin from "./views/pages/sign_in.js";
-//import Profile from "./vistas/paginas/profile.js";
+import Profile from "./views/pages/profile.js";
 // import Timeline from "./vistas/paginas/timeline.js";
 import Error404 from "./views/pages/error404.js";
 
@@ -24,7 +24,7 @@ const routes = {
     "/": Home,
     "/login": Login,
     "/register": Signin,
-    // "/profile": Profile,
+    "/profile": Profile,
     // "/timeline": Timeline
 };
 
@@ -37,6 +37,7 @@ const router = async() => {
     const main = null || document.getElementById("page-container");
     const footer = null || document.getElementById("footer-container");
 
+    
     //Representa los elementos estático en la página
     header.innerHTML = await Navbar.render();
     await Navbar.after_render();
@@ -56,8 +57,7 @@ const router = async() => {
   // Obtenga la página de nuestro hash de rutas compatibles.
   let page = routes[parsedURL] ? routes[parsedURL] : Error404;
   main.innerHTML = await page.render();
-  await page.after_render();  
-
+  await page.after_render(); 
 };
 
 // Escucha el cambio de hash
