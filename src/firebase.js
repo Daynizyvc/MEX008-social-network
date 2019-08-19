@@ -85,7 +85,7 @@ const loginS = (email, password) =>{
 
   firebase.auth().signInWithEmailAndPassword(emailA, passwordA)
   .then(() => goProfile())
-  console.log("Bienvenido a supportMe");
+  console.log("Bienvenido a supportMe")
     .catch(function(error) {        
     // Handle Errors here.
     const errorCode = error.code;
