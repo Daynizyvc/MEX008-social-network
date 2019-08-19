@@ -255,3 +255,18 @@ figure {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
+
+/* Yael */
+.container-img{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 30vh;
+  background: #f7dca8;
+  border: solid red 2px;
+}
+
+#name-user-profile{
+  width: 100vw;
+  height: 5vh;
+}

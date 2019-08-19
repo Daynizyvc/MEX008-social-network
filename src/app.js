@@ -39,21 +39,26 @@ const router = async() => {
 
     
     //Representa los elementos estático en la página
-    header.innerHTML = await Navbar.render();
-    await Navbar.after_render();
-    footer.innerHTML = await Footer.render();
-    await Footer.after_render();
+    // header.innerHTML = await Navbar.render();
+    // await Navbar.after_render();
+    // footer.innerHTML = await Footer.render();
+    // await Footer.after_render();
 
     // Obtener el URL analizado de la barra de direcciones
     let request = Utils.parseRequestURL();
-
 
   // Analiza la URL y si tiene una parte de id, cámbiala con la cadena ": id"
   let parsedURL =
     (request.resource ? "/" + request.resource : "/") +
     (request.id ? "/:id" : "") +
     (request.verb ? "/" + request.verb : "");
-  // console.log("PARSED", parsedURL);
+  
+  //Para que no se muestre la navbar en el inicio, solo en el profile y el timeline
+  if(parsedURL === '/profile'){
+    header.innerHTML = await Navbar.render();
+    await Navbar.after_render();
+  }
+  
   // Obtenga la página de nuestro hash de rutas compatibles.
   let page = routes[parsedURL] ? routes[parsedURL] : Error404;
   main.innerHTML = await page.render();

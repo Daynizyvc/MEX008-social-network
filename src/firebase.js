@@ -1,25 +1,12 @@
 
-    //Archivos que se necesitan para usar firebase
-    // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBHUStouS-ebrZIAVA8rpkCHPTqpIi5k40",
-    authDomain: "supporteme-147ea.firebaseapp.com",
-    databaseURL: "https://supporteme-147ea.firebaseio.com",
-    projectId: "supporteme-147ea",
-    storageBucket: "supporteme-147ea.appspot.com",
-    messagingSenderId: "1007267288966",
-    appId: "1:1007267288966:web:ab035c27ed063a27"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
+ //Funciones puras//  
   //************************************** */Registro del usuario****************************************************************************************
-  const registerUser = () => {
-    const formOne = document.getElementById("form-sign");
+  const registerUser = (emailR, passwordR, cpasswordR) => {
+    // const formOne = document.getElementById("form-sign");
     //Guardan los datos que ingresa el usuario para registrarse
-    const eMail = formOne.email.value;
-    const password = formOne.password.value;
-    const confirmPassword = formOne.cpassword.value;
+    const eMail = emailR.value;
+    const password = passwordR.value;
+    const confirmPassword = cpasswordR.value;
 
     //Usamos la función de firebase para crear un usuario con contraseña y verificamos que su contraseña y su confirmación coincidan para poder registrarlo.
     if(password === confirmPassword){
@@ -39,8 +26,10 @@
     }else{
       alert("La confirmación de contraseña no coincide");
     }
+    return;
   };
 
+  window.registerUser = registerUser;
 //**********************Función que ve si el usuario esta activo o no **************************************
   //Verifica siempre la pagina Web    
   const observador = () =>{
@@ -69,15 +58,34 @@
       });
   }  
   observador();
+  
+    //****************************************************Manda un e-mail de verificación al correo del usuario para que verifique su correo y pueda ingresar a la app***************
+    
+//Función que manda el email de verificación al correo electrónico del usuario.
+  const sendEmailVerification = () => {
+       // [START sendemailverification]
+       const user = firebase.auth().currentUser;
+       user.sendEmailVerification().then(function() {
+       // Email Verification sent!
+       // [START_EXCLUDE]
+       alert('Enviando correo');
+       // [END_EXCLUDE]
+       // [END sendemailverification]
+       }).catch(function(error){
+       console.log(error);
+       });
+     }
+     
+//*********************************************Inicio de sesión************************************************
+//Ingreso de usuario
+const loginS = (email, password) =>{
 
-  //*********************************************Inicio de sesión************************************************
-  //Ingreso de usuario
-  const loginS = () =>{
+  const emailA = email.value;
+  const passwordA = password.value;
 
-    const eMailA = document.getElementById("email-login").value;
-    const passwordA = document.getElementById("password-login").value;
-
-    firebase.auth().signInWithEmailAndPassword(eMailA, passwordA)
+  firebase.auth().signInWithEmailAndPassword(emailA, passwordA)
+  .then(() => goProfile())
+  console.log("Bienvenido a supportMe");
     .catch(function(error) {        
     // Handle Errors here.
     const errorCode = error.code;
@@ -86,46 +94,35 @@
     console.log(errorCode);
     console.log(errorMessage);
     });
-    console.log("Bienvenido a supportMe");
+    return;
 }
 
-//****************************************************Manda un e-mail de verificación al correo del usuario para que verifique su correo y pueda ingresar a la app***************
-
-//Función que manda el email de verificación al correo electrónico del usuario.
-  const sendEmailVerification = () => {
-    // [START sendemailverification]
-   const user = firebase.auth().currentUser;
-   user.sendEmailVerification().then(function() {
-   // Email Verification sent!
-   // [START_EXCLUDE]
-   alert('Enviando correo');
-   // [END_EXCLUDE]
-   // [END sendemailverification]
-   }).catch(function(error){
-   console.log(error);
-   });
- }
+window.loginS = loginS;
 
 // *************************************** El usuario inicia sesión con google**********************************************************************************
-const provider = new firebase.auth.GoogleAuthProvider();
-const signGoogle = () =>{
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-    // ...
-  }).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
-  });
-}
+  const provider = new firebase.auth.GoogleAuthProvider();
+  const registerGmail = () =>{
+    firebase.auth().signInWithPopup(provider)
+    .then(function(result) {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      // ...
+    })
+    .then(() => goProfile())
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    });
+  }
+
 // *******************************************El usuario se autentifica con Facebook****************************************************************************
 //Autentificación con Facebook
 const signInFacebook = () => {
@@ -139,7 +136,8 @@ const signInFacebook = () => {
           const user = result.user
               // ... 
           console.log('Hola Facebook');
-      }).then(() => goingHome())
+        })
+      .then(() => goProfile())
       .catch(function(error) {
           // Handle Errors here.
           const errorCode = error.code;
@@ -155,41 +153,18 @@ const signInFacebook = () => {
 //YAEL
 // *************************Funcion para cerrar sesion*********************************
   const closeSesion = () =>{
-     firebase.auth().signOut()
-     .then(function(){
-       console.log('Saliendo...');
-     })
-     .catch(function(error){
+    firebase.auth().signOut()
+    .then(function(){
+     console.log('Saliendo...');
+    })
+    .catch(function(error){
       console.log(error);
-     });
+    });
   }
-// *********************** Pruebas con el database*************************
 
+// ********************************Funcion que nos dirige al Perfil*****************************
+  const goProfile = () => {
+    location.hash = '/profile';
+  }
 
-
-//Hacemos una funcion que se usa para obtener la informacion del perfil del usuario
-
-//Crear una referencia donde hacemos referencia de la base de datos que nos brinda firebase
-
-//creamos un objeto con el servicio de firebase
-
-const obtainDateOfUser = () =>{
-  firebase.auth().onAuthStateChanged(function (user){
-      if(user){
-        console.log("hola");
-        console.log(user);
-      }
-  })
-}
-
-
- 
-window.onload = function (){
-obtainDateOfUser();
-
-
-}
-
-
-
-//YAEL
+  //YAEL

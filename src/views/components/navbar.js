@@ -12,7 +12,6 @@ let Navbar = {
   after_render: async () => {
     const logOut= document.getElementById("log-out");
     logOut.addEventListener("click", closeSesion);
-
   }
 };
 export default Navbar;

@@ -29,15 +29,20 @@ let Login = {
     // Esta es una llamada separada, ya que solo se pueden registrar después de pintar el DOM
     // Todo el código relacionado con las interacciones DOM y los controles entran aquí.
     after_render: async() => {
-       
-        const loginSession = document.getElementById("login-count");     
-        loginSession.addEventListener("click", loginS);        
+
+        const eMail = document.getElementById("email-login");
+        const passWord = document.getElementById("password-login");
+        const loginSession = document.getElementById("login-count");   
+        
+        loginSession.addEventListener('click', () =>
+            window.loginS(eMail, passWord)
+        );        
         
         const btnFacebook = document.getElementById("loginFacebook");        
         btnFacebook.addEventListener("click", signInFacebook);
            
         const btnGmail = document.getElementById("loginGoogle");
-        btnGmail.addEventListener("click", signGoogle);
+        btnGmail.addEventListener("click", registerGmail);
   }
 };
 
