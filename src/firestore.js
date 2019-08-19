@@ -41,7 +41,7 @@ const postUser = (type, name, comment, adress, telephone, mobile, stars ) => {
   const adressEmpress = adress;
   const telephoneEmpress = telephone;
   const mobileEmpress = mobile;
-  const starsEmpress = stars.value;
+  const starsEmpress = stars;
 
       db.collection("postUser").add({        
         typeE: typeEmpress,
@@ -81,84 +81,30 @@ const showDateUser = (paintDate) =>{
 window.showDateUser = showDateUser;
 
 
-const showDate = (paintPost) =>{
-    let paint = paintPost;  
-    db.collection("postUser").onSnapshot((querySnapshot) => {
-      //limpiar la tabla
-      paint.innerHTML = "";
-      querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data().first}`);
-        paint.innerHTML += `
-        <button class="delete-btn" id="show-modal-delete">
-            <img src="./img/delete.png" alt="eliminar" />
-          </button>
-          <div class="text-post">
-          <h2>Alejandra Sánchez</h2>
-          <p id="recomendation" class="recommendation">${doc.data().typeE}</p>
-          <p id="typeCompany" class="type-company"></p>
-          <h3 id="nameCompany" class="company">${doc.data().nameE}</h3>
-          <p id="commentary" class="commentary">${doc.data().commentE}</p>
-          <button id="show-modal-contact" class="contact">Contacto</button>
-          <figure class="stars">
-            <img src="./img/iconos.png" alt="Calificación 4 Estrellas " />
-          </figure>
-        </div> 
-        `
-      });
-  });
+// const showDate = (paintPost) =>{
+//     let paint = paintPost;  
+//     db.collection("postUser").onSnapshot((querySnapshot) => {
+//       //limpiar la tabla
+//       paint.innerHTML = "";
+//       querySnapshot.forEach((doc) => {
+//         console.log(`${doc.id} => ${doc.data().first}`);
+//         paint.innerHTML += `
+//         <button class="delete-btn" id="show-modal-delete">
+//             <img src="./img/delete.png" alt="eliminar" />
+//           </button>
+//           <div class="text-post">
+//           <h2>Alejandra Sánchez</h2>
+//           <p id="recomendation" class="recommendation">${doc.data().typeE}</p>
+//           <p id="typeCompany" class="type-company"></p>
+//           <h3 id="nameCompany" class="company">${doc.data().nameE}</h3>
+//           <p id="commentary" class="commentary">${doc.data().commentE}</p>
+//           <button id="show-modal-contact" class="contact">Contacto</button>
+//           <figure class="stars">
+//             <img src="./img/iconos.png" alt="Calificación 4 Estrellas " />
+//           </figure>
+//         </div> 
+//         `
+//       });
+//   });
   }
   window.showDate = showDate;
-
-  
-
-
-// // GABY--------------------------
-// // Initialize Cloud Firestore through Firebase
-// const saveBtn = document.getElementById("add-n-post");
-
-// var db = firebase.firestore();
-
-// // const savePost = () => {
-
-// function save() {
-//   let recommendOption = document.getElementById("input-recommend");
-//   let complaindOption = document.getElementById("input-complain");
-//   var nameCompanyPerson = document.getElementById("name-company").value;
-//   var newComment = document.getElementById("new-comment").value;
-//   var adressCompany = document.getElementById("adress").value;
-//   var telephoneCompany = document.getElementById("adress").value;
-//   var mobileTelephone = document.getElementById("mobile").value;
-//   var ratingStars = document.getElementById("score-stars").value;
-//   db.collection("newPost")
-//     .add({
-//       type: "recommendOption || complaindOption",
-//       name: nameCompanyPerson,
-//       comment: newComment,
-//       adress: adressCompany,
-//       telphone: telephoneCompany,
-//       mobile: mobileTelephone,
-//       stars: ratingStars
-//     })
-//     .then(function(docRef) {
-//       console.log("Document written with ID: ", docRef.id);
-//     })
-//     .catch(function(error) {
-//       console.error("Error adding document: ", error);
-//     });
-// }
-//   saveBtn.addEventListener("click", savePost);
-// // // };
-
-
-
-
-
-
-
-
-//Funcion que me direcciona al iniciso de sesión despues de haberme registrado
-
-
-
-
-

@@ -26,6 +26,9 @@ let Profile = {
     <button class="btn-share" id="btn-share">Compártenos tu recomendación/queja</button>
 
     <div class="container-post" id="container-post">
+          <button class="delete-btn" id="show-modal-delete">
+            <img src="./img/delete.png" alt="eliminar" />
+          </button>
           
     </div>
   </section>
@@ -205,7 +208,7 @@ let Profile = {
       btnPost.addEventListener("click", ()=> {
         console.log("Hola Mundo");
 
-        const paintComment=document.getElementById("container-post");
+        // const paintComment=document.getElementById("container-post");
         const formAddPost = document.getElementById("form-newpost");
         const typeA = formAddPost.option.value;
         const nameA = formAddPost.nameCompany.value;
@@ -213,7 +216,7 @@ let Profile = {
         const adressA = formAddPost.adressCompany.value;
         const telephoneA = formAddPost.telephone.value;
         const mobileA = formAddPost.mobile.value;
-        const star = formAddPost.numberstar;
+        const star = formAddPost.numberstar.value;
 
           window.postUser(typeA, nameA, commentA, adressA, telephoneA, mobileA, star);
           window.showDate(paintComment);
