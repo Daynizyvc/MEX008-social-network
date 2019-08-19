@@ -1,5 +1,8 @@
 
  //Funciones puras//  
+   // Initialize Firebase
+     firebase.initializeApp(firebaseConfig);  
+
   //************************************** */Registro del usuario****************************************************************************************
   const registerUser = (emailR, passwordR, cpasswordR) => {
     // const formOne = document.getElementById("form-sign");
@@ -15,6 +18,7 @@
       console.log("Se ha enviado un e-mail a tu correo")
       sendEmailVerification();
       })
+      .then(() => goLogin)
       .catch(function(error){
         // Handle Errors here.
           const errorCode = error.code;
@@ -28,7 +32,6 @@
     }
     return;
   };
-
   window.registerUser = registerUser;
 //**********************Función que ve si el usuario esta activo o no **************************************
   //Verifica siempre la pagina Web    
@@ -36,6 +39,7 @@
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           console.log("Usuario activo")
+          showNext(user);
           // User is signed in.
           const displayName = user.displayName;
           const email = user.email;
@@ -85,7 +89,6 @@ const loginS = (email, password) =>{
 
   firebase.auth().signInWithEmailAndPassword(emailA, passwordA)
   .then(() => goProfile())
-  console.log("Bienvenido a supportMe")
     .catch(function(error) {        
     // Handle Errors here.
     const errorCode = error.code;
@@ -123,48 +126,62 @@ window.loginS = loginS;
     });
   }
 
+
 // *******************************************El usuario se autentifica con Facebook****************************************************************************
 //Autentificación con Facebook
 const signInFacebook = () => {
 
+  console.log('Hola Facebook');
   const provider = new firebase.auth.FacebookAuthProvider();
-  firebase.auth().signInWithPopup(provider)
-      .then(function(result) {
-          // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-          const token = result.credential.accessToken;
-          // The signed-in user info.
-          const user = result.user
-              // ... 
-          console.log('Hola Facebook');
-        })
-      .then(() => goProfile())
-      .catch(function(error) {
-          // Handle Errors here.
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // The email of the user's account used.
-          const email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
-          const credential = error.credential;
-          // ...
-      });
+  firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then(function(result) {
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      const token = result.credential.accessToken;
+      // The signed-in user info.
+      const user = result.user
+      // ... 
+    })
+    .then(() => goProfile())
+    .catch(function(error) {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    const credential = error.credential;
+    // ...
+    });
 }
 
 //YAEL
 // *************************Funcion para cerrar sesion*********************************
-  const closeSesion = () =>{
-    firebase.auth().signOut()
-    .then(function(){
-     console.log('Saliendo...');
-    })
-    .catch(function(error){
-      console.log(error);
-    });
-  }
+const logOut = () =>{
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    console.log("Saliendo...");
+  }).catch(function(error) {
+    // An error happened.
+  });
+};
 
 // ********************************Funcion que nos dirige al Perfil*****************************
   const goProfile = () => {
     location.hash = '/profile';
   }
 
-  //YAEL
+// ********************************Funcion que muestra el profile si el usuario esta registrado************+****
+
+const showNext = (userA) => {
+  const user = userA;
+    if(user.emailVerified){
+      goProfile();
+    }
+};
+
+const goLogin = () => {
+  location.hash = '/login';
+}
+//YAEL

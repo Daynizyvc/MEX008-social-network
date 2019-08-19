@@ -2,11 +2,19 @@ let navbarTimeline = {
   render: async () => {
     let view = /*html*/ `
         <nav class="navbar-timeline" id="nav-timeline">
-        <a href="#/profile"><div class="shape-circule"><img src="./img/tikkho-maciel-Oed8cpob9VM-unsplash.jpg" alt="Ir a Perfil"></div><p class="name-timeline">Alejandra Sánchez</p></a>
-        <a href="" class="close">Cerrar sesión</a>
+        <a href="#/profile">
+          <div class="shape-circule">
+            <img src="./img/tikkho-maciel-Oed8cpob9VM-unsplash.jpg" alt="Ir a Perfil">
+          </div>
+          <p class="name-timeline">Alejandra Sánchez</p>
+        </a>
+        <a href="#" id="log-out" class="close">Cerrar sesión</a>
       </nav>`;
     return view;
   },
-  after_render: async () => {}
+  after_render: async () => {
+    const close = document.getElementById("log-out");
+    close.addEventListener("click", logOut);
+  }
 };
 export default navbarTimeline;

@@ -1,24 +1,24 @@
 let Signin = {
     render: async() => {
         let view = /*html*/ `
-          <section title="Window-Register" class="section-register" id="section-register">
+        <section class="signin-section" id="section-register">
 
-            <form id="form-sign">
-                <h1>Registro</h1>
-                <input type="text" name="name" placeholder="Nombre" id="register-name" class="register-name">
-                <input type="text" name="lastName" placeholder="Apellido" id="register-lastname" class="lastname">
-                <input type="email" name="email" placeholder="e-mail" id="register-email" class="register-email">
-                <input type="text" name="username" placeholder="Username" id="register-username" class="register-username">
-                <input type="password" name="password" placeholder="Contraseña" id="register-password" class="register-password">
-                <input type="password" name="cpassword" placeholder="Confirmar Contraseña" id="register-cp" class="register-cp">
-
-                <select name="state" size="1" class="register-select" id="register-select">
-                </select>
-
-                <input type="text" name="city" placeholder="Ciudad" class="register-city" id="register-city">
-                <input type="text" name="uhm" placeholder="Unidad Habitacional" class="register-uhm" id="register-uhm">
-                <input type="button" name="btn-register" value="RegistrarMe" id="button-register" class="button-register">
-            </form>
+        <a href=""><img class="return" src="./img/icon-06.png" alt="Ir atrás"></a>
+        <div class="signin-elements">
+            <h2>RegistrarMe</h2>
+          <form id="form-sign" class="form-signin-st">
+          <input type="text" name="name" placeholder="Nombre" id="register-name" class="register-name">
+          <input type="text" name="lastName" placeholder="Apellido" id="register-lastname" class="lastname">
+          <input type="email" name="email" placeholder="e-mail" id="register-email" class="register-email">
+          <input type="text" name="username" placeholder="Username" id="register-username" class="register-username">
+          <input type="password" name="password" placeholder="Contraseña" id="register-password" class="register-password">
+          <input type="password" name="cpassword" placeholder="Confirmar contraseña" id="register-cp" class="register-cp">
+          <select name="state" size="1" class="register-select" id="register-select">
+          </select>
+          <input type="text" name="city" placeholder="Ciudad" class="register-city" id="register-city">
+          <input type="text" name="uhm" placeholder="Unidad Habitacional" class="register-uhm" id="register-uhm">
+          <input type="button" name="btn-register" value="RegistrarMe" id="button-register" class="button-register btn-blue">
+      </form>
 
           </section>
         `;

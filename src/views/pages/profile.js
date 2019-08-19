@@ -15,9 +15,9 @@ let Profile = {
             </figure>
           </div>
           <div class="text-profile">
-            <h1>Alejandra Sánchez</h1>
-            <h2>Ciudad de México</h2>
-            <h3>Puebla #5</h3>
+            <h1 id="nameUser">Alejandra Sánchez</h1>
+            <h2 id="nameCity">Ciudad de México</h2>
+            <h3 id="nameUhm">Puebla #5</h3>
           </div>
         </div>
       </div>
@@ -25,28 +25,14 @@ let Profile = {
 
     <button class="btn-share" id="btn-share">Compártenos tu recomendación/queja</button>
 
-    <div class="container-post" id="">
-          <button class="delete-btn" id="show-modal-delete">
-            <img src="./img/delete.png" alt="eliminar" />
-          </button>
-          <div class="text-post">
-          <h2>Alejandra Sánchez</h2>
-          <p class="recommendation">Recomendación</p>
-          <p class="type-company">Restaurante</p>
-          <h3 class="company">Pizzas Elena</h3>
-          <p class="commentary">
-            Las pizzas de este lugar están muy ricas y a muy buen precio
-          </p>
-          <button id="show-modal-contact" class="contact">Contacto</button>
-          <figure class="stars">
-            <img src="./img/iconos.png" alt="Calificación 4 Estrellas " />
-          </figure>
-        </div>
-        </div>
-      </section>
+    <div class="container-post" id="container-post">
+          
+    </div>
+  </section>
       `;
     return view;
   },
+
   after_render: async () => {
     // MODAL
     // Añadir un objeto de atributos a un elemento
@@ -71,6 +57,8 @@ let Profile = {
       addAttributes(customElement, attributes);
       return customElement;
     };
+
+    //-----------------------------------------------------
     // Imprimir modal eliminar publicación
     const printModalDelete = content => {
       // Crear contenedor interno
@@ -115,6 +103,8 @@ let Profile = {
         printModalDelete(deleteQuestion);
       });
 
+    //-----------------------------------------------------
+
     // Imprimir modal formulario publicación
     const printNewPost = content => {
       // Crear contenedor interno
@@ -151,59 +141,88 @@ let Profile = {
     const formNewPost = `
     <span class="close-btn" ><img src="./img/close-08.png" alt="Cerrar" id="close-btn-form"></span>
     <form class="container-newpost" id="form-newpost">
-    <p style="display: block"> Tienes una...</p>
-    <input type="radio"  style="width:20px;height:20px" name="option" value="recommend" id="input-recommend"><p style="color:#FF9E03">Recomendación</p>
-    <!-- <br> -->
-    <input type="radio" style="width:20px;height:20px" name="option" value="complain" id="input-complain"><p style="color:#F18E8C">Queja</p>
-    <input
-      type="text"
-      id="name-company"
-      placeholder="Nombre de la empresa o persona"
-      class="form-input"
-    />
-    <textarea
-    placeholder="Agrega un comentario"
-      name="textarea"
-      rows="3"
-      cols="33"
-      id="new-comment"
-      class=""
-    ></textarea>
+      <p style="display: block"> Tienes una...</p>
+      <input type="radio"  style="width:20px;height:20px" name="option" value="recommend" id="input-recommend"><p style="color:#FF9E03">Recomendación</p>
+      <!-- <br> -->
+      <input type="radio" style="width:20px;height:20px" name="option" value="complain" id="input-complain"><p style="color:#F18E8C">Queja</p>
+      <input
+        type="text"
+        name="nameCompany"
+        id="name-company"
+        placeholder="Nombre de la empresa o persona"
+        class="form-input"
+      />
+      <textarea
+      placeholder="Agrega un comentario"
+        name="textarea"
+        rows="3"
+        cols="33"
+        id="new-comment"
+        class=""
+      ></textarea>
 
-    <input
-      type="text"
-      id="adress"
-      placeholder="Dirección"
-      class="form-input"
-    />
+      <input
+        type="text"
+        name="adressCompany"
+        id="adress"
+        placeholder="Dirección"
+        class="form-input"
+      />
 
-    <input
-      type="number"
-      id="telephone"
-      placeholder="Teléfono"
-      class="form-input"
-    />
-    
-    <input
-      type="number"
-      id="mobile"
-      placeholder="Móvil/WhatsApp"
-      class="form-input"
-    />
+      <input
+        type="number"
+        name="telephone"
+        id="telephone"
+        placeholder="Teléfono"
+        class="form-input"
+      />
+      
+      <input
+        type="number"
+        name="mobile"
+        id="mobile"
+        placeholder="Móvil/WhatsApp"
+        class="form-input"
+      />
 
-    <input
-      type="number"
-      id="score-stars"
-      placeholder="Número de estrellas"
-      class="form-input" style="
-      width: 145px;"
-    />
-    <button class="btn-blue" id="add-n-post" onclick="save()">Agregar</button>
+      <input
+        type="number"
+        name="numberstar"
+        id="score-stars"
+        placeholder="Número de estrellas"
+        class="form-input" style="
+        width: 145px;"
+      />
+      <button type="button" class="btn-blue" id="add-n-post" >Agregar</button>
 </form>
 `;
     document.getElementById("btn-share").addEventListener("click", () => {
       printNewPost(formNewPost);
+      //YAEL
+      const btnPost = document.getElementById("add-n-post");
+      
+      
+      btnPost.addEventListener("click", ()=> {
+        console.log("Hola Mundo");
+
+        const paintComment=document.getElementById("container-post");
+        const formAddPost = document.getElementById("form-newpost");
+        const typeA = formAddPost.option.value;
+        const nameA = formAddPost.nameCompany.value;
+        const commentA = formAddPost.textarea.value;
+        const adressA = formAddPost.adressCompany.value;
+        const telephoneA = formAddPost.telephone.value;
+        const mobileA = formAddPost.mobile.value;
+        const star = formAddPost.numberstar;
+
+          window.postUser(typeA, nameA, commentA, adressA, telephoneA, mobileA, star);
+          window.showDate(paintComment);
+      });
+
     });
+
+
+
 
     // Imprimir modal contacto
     const printModalContact = content => {
@@ -240,7 +259,7 @@ let Profile = {
           removeModalContact();
       });
     };
-
+    
     const contactData = `<figure><img src="./img/close-08.png" alt="Cerrar" id="close-contact"></figure>
     <div class="contact-modal-elements">
     <h2 class="data-contact">Datos de contacto</h2>
@@ -254,7 +273,9 @@ let Profile = {
       .getElementById("show-modal-contact")
       .addEventListener("click", () => {
         printModalContact(contactData);
-      });
+      }); 
   }
 };
 export default Profile;
+
+      
